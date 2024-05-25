@@ -21,14 +21,11 @@
 
 			<div>
 
-					<div>
-
 						<?php
-							// Site title or logo.
-							the_custom_logo();
+						//logo.
+						$image_attributes = wp_get_attachment_image_src( '8' , 'medium' ); 
 						?>
-
-					</div><!-- .header-titles -->
+						<a href="/"><img src="<?php echo $image_attributes[0]; ?>" /></a>
 
 			</div><!-- .header-titles-wrapper -->
 

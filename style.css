@@ -6,5 +6,99 @@
 */
 
 /********** GENERAL ***********/
+@font-face {
+    font-family: "Space Mono";  
+    src: url(./fonts/SpaceMono-Regular.ttf);  
+    font-weight: normal;  
+}
+
+@font-face {
+    font-family: "Poppins";  
+    src: url(./fonts/Poppins-Regular.ttf);  
+    font-weight: normal;  
+}
+
+h1 {
+font-family: "Space Mono";
+font-size: 96px;
+font-style: italic;
+font-weight: 700;
+}
+
+h2 {
+font-family: "Space Mono";
+font-size: 66px;
+font-style: italic;
+font-weight: 400;
+}
+
+h3 {
+font-family: "Space Mono";
+font-size: 18px;
+font-weight: 400;
+}
+
+p {
+font-family: Poppins;
+font-size: 14px;
+font-weight: 300;
+}
 
 
+body {
+    max-width: 1280px;
+    margin: auto;
+  }
+
+header {
+display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 20px 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    font-family: "Space Mono";
+    font-size: 16px;
+    text-transform: uppercase;
+    color: black;
+  }
+
+nav ul a {
+  color: black;
+  text-decoration: none;
+}
+  
+/********* FOOTER *********/
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    height: 40px;
+}
+
+footer li {
+    list-style-type: none !important;
+    font-family: "Space Mono";
+    font-size: 16px;
+    text-transform: uppercase;
+    color: black;
+}
+
+footer li a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer_nav {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}

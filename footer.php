@@ -1,12 +1,12 @@
 			<footer>
 
-				<div>
+				<div class="footer_nav">
 								<?php
 									wp_nav_menu(
 										array(
 											'container'  => '',
 											'items_wrap' => '%3$s',
-											'menu' => 'menu_footer',
+											'menu' => 'footer',
 										)
 									);
 								?>
