@@ -50,6 +50,7 @@ body {
     margin: auto;
   }
 
+/********** HEADER ************/
 header {
 display: flex;
   flex-direction: row;
@@ -101,4 +102,126 @@ footer li a {
     display: flex;
     flex-direction: row;
     gap: 100px;
+}
+
+
+/*********** MODALE ************/
+
+.container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: fixed;
+  width: 100%;
+  background-color: #000000e0;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  opacity: 0;
+}
+.container p {
+  margin-bottom: 5px;
+}
+.modale {
+  background-color: white;
+  max-height: 750px;
+  max-width: 600px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+.modale div {
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-bottom: 30px;
+}
+.modale img {
+  max-width: inherit;
+  object-fit: none;
+}
+
+input[type=text],
+input[type=email] {
+  width: 260px;
+  height: 30px;
+  border-radius: 8px;
+  border: solid 1px;
+  margin-top: 4px;
+}
+
+input[type=submit] {
+  width: 260px;
+  height: 50px;
+  border-radius: 2px;
+  border: 0;
+  margin-top: 4px;
+  background-color: #D8D8D8;
+  font-family: poppins;
+}
+
+input[type=submit]:hover {
+  background-color: #B4B4B4;
+}
+
+textarea {
+  width: 260px;
+  border-radius: 8px;
+  border: solid 1px;
+  margin-top: 4px;
+}
+form {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.wpcf7-spinner {
+  position: absolute;
+}
+
+.open {
+animation: container 100ms forwards;
+display: flex;
+}
+
+.open_modale {
+  animation: modale 500ms 200ms forwards;
+  display: flex;
+  }
+  
+.bye {
+  animation: bye 300ms forwards;
+}
+
+@keyframes modale {
+  0% {
+    transform: translateY(500px) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes container {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bye {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
