@@ -7,52 +7,52 @@
 
 /********** GENERAL ***********/
 @font-face {
-    font-family: "Space Mono";  
-    src: url(./fonts/SpaceMono-Regular.ttf);  
-    font-weight: normal;  
+  font-family: "Space Mono";
+  src: url(./fonts/SpaceMono-Regular.ttf);
+  font-weight: normal;
 }
 
 @font-face {
-    font-family: "Poppins";  
-    src: url(./fonts/Poppins-Regular.ttf);  
-    font-weight: normal;  
+  font-family: "Poppins";
+  src: url(./fonts/Poppins-Regular.ttf);
+  font-weight: normal;
 }
 
 h1 {
-font-family: "Space Mono";
-font-size: 96px;
-font-style: italic;
-font-weight: 700;
+  font-family: "Space Mono";
+  font-size: 96px;
+  font-style: italic;
+  font-weight: 700;
 }
 
 h2 {
-font-family: "Space Mono";
-font-size: 66px;
-font-style: italic;
-font-weight: 400;
+  font-family: "Space Mono";
+  font-size: 66px;
+  font-style: italic;
+  font-weight: 400;
 }
 
 h3 {
-font-family: "Space Mono";
-font-size: 18px;
-font-weight: 400;
+  font-family: "Space Mono";
+  font-size: 18px;
+  font-weight: 400;
 }
 
 p {
-font-family: Poppins;
-font-size: 14px;
-font-weight: 300;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 
 body {
-    max-width: 1280px;
-    margin: auto;
-  }
+  max-width: 1280px;
+  margin: auto;
+}
 
 /********** HEADER ************/
 header {
-display: flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -61,47 +61,47 @@ display: flex;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    font-family: "Space Mono";
-    font-size: 16px;
-    text-transform: uppercase;
-    color: black;
-  }
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  font-family: "Space Mono";
+  font-size: 16px;
+  text-transform: uppercase;
+  color: black;
+}
 
 nav ul a {
   color: black;
   text-decoration: none;
 }
-  
+
 /********* FOOTER *********/
 footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 !important;
-    height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  height: 40px;
 }
 
 footer li {
-    list-style-type: none !important;
-    font-family: "Space Mono";
-    font-size: 16px;
-    text-transform: uppercase;
-    color: black;
+  list-style-type: none !important;
+  font-family: "Space Mono";
+  font-size: 16px;
+  text-transform: uppercase;
+  color: black;
 }
 
 footer li a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 .footer_nav {
-    display: flex;
-    flex-direction: row;
-    gap: 100px;
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
 }
 
 
@@ -121,9 +121,11 @@ footer li a {
   height: 100%;
   opacity: 0;
 }
+
 .container p {
   margin-bottom: 5px;
 }
+
 .modale {
   background-color: white;
   max-height: 750px;
@@ -134,11 +136,13 @@ footer li a {
   align-items: center;
   opacity: 0;
 }
+
 .modale div {
-    padding-right: 100px;
-    padding-left: 100px;
-    padding-bottom: 30px;
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-bottom: 30px;
 }
+
 .modale img {
   max-width: inherit;
   object-fit: none;
@@ -173,26 +177,28 @@ textarea {
   border: solid 1px;
   margin-top: 4px;
 }
+
 form {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 .wpcf7-spinner {
   position: absolute;
 }
 
 .open {
-animation: container 100ms forwards;
-display: flex;
+  animation: container 100ms forwards;
+  display: flex;
 }
 
 .open_modale {
   animation: modale 500ms 200ms forwards;
   display: flex;
-  }
-  
+}
+
 .bye {
   animation: bye 300ms forwards;
 }
@@ -202,6 +208,7 @@ display: flex;
     transform: translateY(500px) scale(0.9);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0px) scale(1);
     opacity: 1;
@@ -212,6 +219,7 @@ display: flex;
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -221,7 +229,163 @@ display: flex;
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
+}
+
+
+/************ SIMPLE PHOTO *************/
+
+#single-photo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px 0 20px;
+  gap: 20px;
+  border-bottom: 1px solid;
+  padding: 0;
+}
+
+.right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: end;
+}
+
+.left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+
+}
+
+#description {
+  height: calc(100vh - 118px);
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  flex-direction: column;
+  width: 100%;
+  gap:20px;
+  padding-bottom:20px;
+  border-bottom: 1px solid black;
+}
+#description h2 {
+  text-transform: uppercase;
+  line-height: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+#description p {
+  font-family: "Space Mono";
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-align: left;
+  margin:0;
+  padding: 0;
+}
+
+#image {
+  height: calc(100vh - 118px);
+}
+
+#image img {
+  object-fit: contain;
+  width: auto;
+  height: inherit;
+  max-width: 620px;
+}
+
+#contact {
+  height: 118px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#open {
+  padding: 15px 100px 15px 100px;
+  background-color: #D8D8D8;
+  color: black;
+  font-size: 12px;
+  font-family: "Space Mono";
+  text-decoration: none;
+}
+
+#next {
+  height: 118px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  position: relative; 
+}
+
+.arrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;  
+}
+
+.hover-title {
+  display: inline;
+  pointer-events: auto;
+  cursor: pointer;
+  position: relative;
+}
+
+.hover-image {
+  visibility: hidden;
+  width: 70px;
+  height: 60px;
+  position: absolute;
+  top: -80px; 
+  left:-45px;
+  transition: visibility 0s, opacity 0.5s linear; 
+  opacity: 0;
+}
+
+.hover-image-left {
+  visibility: hidden;
+  width: 70px;
+  height: 60px;
+  position: absolute;
+  top: -80px; 
+  left:0px;
+  transition: visibility 0s, opacity 0.5s linear; 
+  opacity: 0;
+}
+
+.hover-image img {
+  max-height: 80px;
+  min-height: 80px;
+  object-fit: cover;
+}
+
+.hover-image-left img {
+  max-height: 80px;
+  min-height: 80px;
+  object-fit: cover;
+}
+
+.hover-title:hover .hover-image {
+  visibility: visible;
+  opacity: 1;
+}
+.hover-title:hover .hover-image-left {
+  visibility: visible;
+  opacity: 1;
 }

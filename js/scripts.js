@@ -20,3 +20,19 @@ button.addEventListener("click", (e) => {
   container.classList.add("open")
   modale.classList.add("open_modale")
 })
+
+const contact = document.getElementById("open");
+
+contact.addEventListener("click", (e) => {
+  e.preventDefault()
+  container.classList.add("open")
+  modale.classList.add("open_modale")
+})
+
+jQuery(document).ready(function($) {
+    // Récupérer le texte de l'élément span une fois que le DOM est prêt
+    let val = document.getElementById("reference").textContent
+    console.log(val)
+    // Assigner la valeur récupérée au champ input
+    $("#ref").val(val);
+  });

@@ -9,71 +9,55 @@
 
 get_header(); // Inclut le header.php du thème
 ?>
+<?php 
 
-<main id="main" class="site-main">
-    <?php
-    while ( have_posts() ) :
-        the_post();
-        ?>
-        
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <header class="entry-header">
-                <?php
-                if ( is_singular() ) :
-                    the_title( '<h1 class="entry-title">', '</h1>' );
-                else :
-                    the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-                endif;
-                ?>
-            </header><!-- .entry-header -->
+$post = get_post();
+$postId = $post->ID;
+$next_post_id = get_next_post_by_date();
+$previous_post_id = get_previous_post_by_date();
+?>
 
-            <div class="entry-content">
-                <?php
-                the_content();
-
-                wp_link_pages(
-                    array(
-                        'before' => '<div class="page-links">' . __( 'Pages:', 'your-theme-text-domain' ),
-                        'after'  => '</div>',
-                    )
-                );
-                ?>
-            </div><!-- .entry-content -->
-
-            <footer class="entry-footer">
-                <?php
-                // Edit post link for logged-in users with the right capability
-                edit_post_link(
-                    sprintf(
-                        wp_kses(
-                            /* translators: %s: Name of current post. Only visible to screen readers */
-                            __( 'Edit <span class="screen-reader-text">%s</span>', 'your-theme-text-domain' ),
-                            array(
-                                'span' => array(
-                                    'class' => array(),
-                                ),
-                            )
-                        ),
-                        get_the_title()
-                    ),
-                    '<span class="edit-link">',
-                    '</span>'
-                );
-                ?>
-            </footer><!-- .entry-footer -->
-        </article><!-- #post-<?php the_ID(); ?> -->
-
-        <?php
-        // If comments are open or we have at least one comment, load up the comment template
-        if ( comments_open() || get_comments_number() ) :
-            comments_template();
-        endif;
-
-    endwhile; // End of the loop.
-    ?>
+<main class="site-main">
+    <div id="single-photo">
+        <div class="left">
+            <div id="description">
+                <h2><?php echo str_replace(' ', '<br>', get_the_title()); ?></h2>
+                <p>Référence : <span id="reference"><?php echo get_field('reference', $postId); ?></span></p>
+                <p>Catégorie : <?php $terms = get_field('categorie', $postId);      
+                    foreach ( $terms as $term ) {
+                        echo  $term->name  ;
+                    } ?>
+                </p>
+                <p>Format : <?php $terms2 = get_field('format', $postId);      
+                    foreach ( $terms2 as $term ) {
+                    echo  $term->name  ;
+                    } ?>
+                </p>
+                <p>Type : <?php echo get_field('type', $postId); ?></p>
+                <p>Année : <?php echo the_time('Y'); ?></p>
+            </div>
+            <div id="contact">
+                <p>Cette photo vous intéresse ?</p>
+                <p><a id="open" href="#">Contact</a></p>
+            </div>
+        </div>
+        <div class="right">
+            <div id="image"><?php echo get_the_post_thumbnail(); ?></div>
+            <div id="next">
+                <div class="arrow">
+                    <a class="hover-title" href="<?php echo get_permalink($previous_post_id) ?>">
+                        <img src="<?php echo get_stylesheet_directory_uri().'/assets/left.png' ?>">
+                        <div class="hover-image-left"><img src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($previous_post_id),'previous')[0]; ?>"></div>
+                    </a>
+                    <a class="hover-title" href="<?php echo get_permalink($next_post_id) ?>">
+                        <img src="<?php echo get_stylesheet_directory_uri().'/assets/right.png' ?>">
+                        <div class="hover-image"><img src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($next_post_id),'previous')[0]; ?>"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </main><!-- #main -->
-
 <?php
-get_sidebar(); // Inclut le sidebar.php du thème si présent
 get_footer(); // Inclut le footer.php du thème
 ?>
