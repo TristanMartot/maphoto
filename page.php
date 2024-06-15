@@ -15,65 +15,36 @@ get_header(); // Inclut le header.php du thème
 ?>
 
 <main id="main" class="site-main">
-    <?php
-    while ( have_posts() ) :
-        the_post();
-        ?>
+    <?php 
+// 1. On définit les arguments pour définir ce que l'on souhaite récupérer
+$args = array(
+    'post_type' => 'photo',
+    'posts_per_page' => 1,
+    'orderby' => 'rand',
+);
+
+// 2. On exécute la WP Query
+$my_query = new WP_Query( $args );
+
+// 3. On lance la boucle !
+if( $my_query->have_posts() ) : 
+    while( $my_query->have_posts() ) : 
+        $my_query->the_post();
         
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <header class="entry-header">
-                <?php
-                the_title( '<h1 class="entry-title">', '</h1>' );
-                ?>
-            </header><!-- .entry-header -->
+        $image_url = esc_url(wp_get_attachment_image_src(get_post_thumbnail_id(), "full")[0]);
 
-            <div class="entry-content">
-                <?php
-                the_content();
+        echo '<div class="hero" style="background-image: url(' . $image_url . ');">';
 
-                wp_link_pages(
-                    array(
-                        'before' => '<div class="page-links">' . __( 'Pages:', 'your-theme-text-domain' ),
-                        'after'  => '</div>',
-                    )
-                );
-                ?>
-            </div><!-- .entry-content -->
+    endwhile;
+endif;
 
-            <footer class="entry-footer">
-                <?php
-                // Edit post link for logged-in users with the right capability
-                edit_post_link(
-                    sprintf(
-                        wp_kses(
-                            /* translators: %s: Name of current post. Only visible to screen readers */
-                            __( 'Edit <span class="screen-reader-text">%s</span>', 'your-theme-text-domain' ),
-                            array(
-                                'span' => array(
-                                    'class' => array(),
-                                ),
-                            )
-                        ),
-                        get_the_title()
-                    ),
-                    '<span class="edit-link">',
-                    '</span>'
-                );
-                ?>
-            </footer><!-- .entry-footer -->
-        </article><!-- #post-<?php the_ID(); ?> -->
-
-        <?php
-        // If comments are open or we have at least one comment, load up the comment template
-        if ( comments_open() || get_comments_number() ) :
-            comments_template();
-        endif;
-
-    endwhile; // End of the loop.
-    ?>
+// 4. On réinitialise à la requête principale (important)
+wp_reset_postdata();
+?>
+<h1>Photographe Event</h1>
+</div>
 </main><!-- #main -->
 
 <?php
-get_sidebar(); // Inclut le sidebar.php du thème si présent
 get_footer(); // Inclut le footer.php du thème
 ?>
