@@ -43,6 +43,21 @@ wp_reset_postdata();
 ?>
 <h1>Photographe Event</h1>
 </div>
+<div class="parent_container">
+<div class="home_container_photo_block">  
+<?          
+        // 1. On définit les arguments pour définir ce que l'on souhaite récupérer
+        $args = array(
+            'post_type' => 'photo',
+            'posts_per_page' => 8,
+            'orderby' => 'rand',
+        );
+        
+        // Passer les arguments à photo_block.php
+        set_query_var('args', $args);
+        get_template_part('templates_parts/photo_block'); ?>
+</div>
+    </div>
 </main><!-- #main -->
 
 <?php

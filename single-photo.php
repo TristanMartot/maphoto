@@ -18,6 +18,7 @@ $previous_post_id = get_previous_post_by_date();
 ?>
 
 <main class="site-main">
+    <div class="parent_container">
     <div id="single-photo">
         <div class="left">
             <div id="description">
@@ -60,7 +61,23 @@ $previous_post_id = get_previous_post_by_date();
     </div>
     <h3 class="maybe">Vous aimerez aussi :</h3>
     <div class="container_photo_block">  
-        <? get_template_part('templates_parts/photo_block'); ?>
+        
+        <? 
+        $post = get_post();
+        $postId = $post->ID;
+        $category = get_field('categorie', $postId);
+        // 1. On définit les arguments pour définir ce que l'on souhaite récupérer
+        $args = array(
+            'post_type' => 'photo',
+            'categorie' => $category[0]->slug,
+            'posts_per_page' => 2,
+            'orderby' => 'rand',
+        );
+        
+        // Passer les arguments à photo_block.php
+        set_query_var('args', $args);
+        get_template_part('templates_parts/photo_block'); ?>
+    </div>
     </div>
 </main><!-- #main -->
 <?php

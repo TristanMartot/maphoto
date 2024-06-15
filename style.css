@@ -46,6 +46,10 @@ p {
   font-weight: 300;
 }
 
+.parent_container {
+  max-width: 1280px;
+  margin: auto;
+}
 
 body {
   margin: auto;
@@ -409,12 +413,12 @@ form {
 
 .photo-container {
   position: relative;
-  width: 100%;
+  width: 49%;
   height: 500px;
 }
 
 .block_image  {
-  width: inherit;
+  width: 100%;
 }
 
 .block_image img {
@@ -494,4 +498,15 @@ form {
   background-position: center;
   justify-content: center;
   align-items: center;
+}
+
+.home_container_photo_block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px 0 20px;
+  padding-bottom: 80px;
 }
