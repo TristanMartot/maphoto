@@ -55,7 +55,12 @@ $previous_post_id = get_previous_post_by_date();
                     </a>
                 </div>
             </div>
-        </div>
+        </div>    
+        
+    </div>
+    <h3 class="maybe">Vous aimerez aussi :</h3>
+    <div class="container_photo_block">  
+        <? get_template_part('templates_parts/photo_block'); ?>
     </div>
 </main><!-- #main -->
 <?php

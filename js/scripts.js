@@ -34,5 +34,6 @@ jQuery(document).ready(function($) {
     let val = document.getElementById("reference").textContent
     console.log(val)
     // Assigner la valeur récupérée au champ input
-    $("#ref").val(val);
+    // $("#ref").val(val);
+    document.querySelector('#ref').value = val
   });
