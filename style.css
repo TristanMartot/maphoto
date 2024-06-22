@@ -27,6 +27,7 @@ h1 {
   -webkit-text-stroke: 2px rgb(255, 255, 255);
   -webkit-text-fill-color: transparent;
 }
+
 h2 {
   font-family: "Space Mono";
   font-size: 66px;
@@ -274,7 +275,6 @@ form {
   flex-direction: column;
   justify-content: end;
   align-items: start;
-
 }
 
 #description {
@@ -284,10 +284,11 @@ form {
   align-items: start;
   flex-direction: column;
   width: 100%;
-  gap:20px;
-  padding-bottom:20px;
+  gap: 20px;
+  padding-bottom: 20px;
   border-bottom: 1px solid black;
 }
+
 #description h2 {
   text-transform: uppercase;
   line-height: 60px;
@@ -301,7 +302,7 @@ form {
   font-weight: 400;
   letter-spacing: 0.1em;
   text-align: left;
-  margin:0;
+  margin: 0;
   padding: 0;
 }
 
@@ -340,7 +341,7 @@ form {
   flex-direction: column;
   justify-content: end;
   align-items: end;
-  position: relative; 
+  position: relative;
 }
 
 .arrow {
@@ -348,7 +349,7 @@ form {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;  
+  gap: 20px;
 }
 
 .hover-title {
@@ -363,9 +364,9 @@ form {
   width: 70px;
   height: 60px;
   position: absolute;
-  top: -80px; 
-  left:-45px;
-  transition: visibility 0s, opacity 0.5s linear; 
+  top: -80px;
+  left: -45px;
+  transition: visibility 0s, opacity 0.5s linear;
   opacity: 0;
 }
 
@@ -379,14 +380,15 @@ form {
   visibility: visible;
   opacity: 1;
 }
+
 .hover-image-left {
   visibility: hidden;
   width: 70px;
   height: 60px;
   position: absolute;
-  top: -80px; 
-  left:0px;
-  transition: visibility 0s, opacity 0.5s linear; 
+  top: -80px;
+  left: 0px;
+  transition: visibility 0s, opacity 0.5s linear;
   opacity: 0;
 }
 
@@ -408,7 +410,7 @@ form {
   align-items: center;
   justify-content: center;
   margin: 0 20px 0 20px;
-  padding-bottom: 80px;
+  padding-bottom: 10px;
 }
 
 .photo-container {
@@ -417,7 +419,7 @@ form {
   height: 500px;
 }
 
-.block_image  {
+.block_image {
   width: 100%;
 }
 
@@ -433,7 +435,7 @@ form {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); 
+  background: rgba(0, 0, 0, 0.6);
   color: white;
   display: flex;
   flex-direction: column;
@@ -441,12 +443,12 @@ form {
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .photo-container:hover .block_info {
   opacity: 1;
-  pointer-events: auto; 
+  pointer-events: auto;
 }
 
 .info_reference {
@@ -457,6 +459,7 @@ form {
   font-family: Poppins;
   font-size: 14px;
 }
+
 .info_category {
   margin: 10px 0;
   bottom: 0px;
@@ -479,12 +482,10 @@ form {
   max-width: 40px;
   max-height: auto;
   object-fit: contain;
-
 }
 
 .maybe {
   margin: 60px 20px 50px 20px;
-
 }
 
 
@@ -507,6 +508,191 @@ form {
   gap: 20px;
   align-items: center;
   justify-content: center;
+  padding-bottom: 10px;
+}
+
+#photos-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
   margin: 0 20px 0 20px;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.page_parent_container {
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  height: 50px;
+  width: 250px;
+  border: 0;
+  background-color: #D8D8D8;
+  font-family: "Space mono";
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+
+.select_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  margin: 40px 0 20px 0;
+}
+
+select {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #B8BBC2;
+  font-family: Poppins;
+  font-size: 12px;
+}
+
+
+.custom-select {
+  position: relative;
+  width: 400px;
+  max-width: 100%;
+  font-size: 1.15rem;
+  color: #000;
+  margin-top: 3rem;
+}
+
+.select-button {
+  width: 100%;
+  font-family: Poppins;
+  color: #313144;
+  font-size: 12px;
+  background-color: #fff;
+  padding: 0.675em 1em;
+  border: 1px solid #B8BBC2;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 4;
+  position: relative;
+}
+
+.arrow {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #000;
+  transition: transform ease-in-out 0.3s;
+}
+
+.select-dropdown {
+  font-family: Poppins;
+  color: #313144;
+  font-size: 12px;
+  position: absolute;
+  list-style: none;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border: 0;
+  border-radius: 0 0 8px 8px;
+  padding: 0;
+  margin-top: -33px;
+  max-height: 200px;
+  overflow-y: auto;
+  transition: 0.3s ease;
+  z-index: 1;
+  transform-origin: top center;
+  transform: scaleY(0);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.select-dropdown:focus-within {
+  box-shadow: 0 10px 25px rgba(94, 108, 233, 0.6);
+}
+
+.select-dropdown li {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 10px;
+  transform: translateY(200px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s ease;
+}
+
+.select-dropdown li label {
+  width: 100%;
+  padding: 8px 10px;
+  cursor: pointer;
+  display: block;
+  gap: 1rem;
+  align-items: center;
+}
+
+.select-dropdown::-webkit-scrollbar {
+  width: 7px;
+}
+
+.select-dropdown::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+
+.select-dropdown::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 25px;
+}
+
+.select-dropdown input[type="radio"] {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+}
+
+/* interactivity */
+
+.custom-select.active .arrow {
+  transform: rotate(180deg);
+}
+
+.custom-select.active .select-button {
+  border: 2px solid #215AFF;
+  border-radius: 8px 8px 0 0;
+}
+
+.custom-select.active .select-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: scaleY(1);
+}
+
+.custom-select.active .select-dropdown li {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.select-dropdown li:hover {
+  background-color: #FFD6D6;
+}
+
+.select-dropdown li:active {
+  background-color: #FE5858;
+}
+
+.selected {
+  background-color: #E00000;
+  color: white;
 }

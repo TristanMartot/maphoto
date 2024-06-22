@@ -1,6 +1,6 @@
 <?php 
 
-// Récupérer les arguments passés
+// Récupérer les arguments 
 $args = get_query_var('args');
 
 // 2. On exécute la WP Query
