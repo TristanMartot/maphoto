@@ -18,8 +18,8 @@
 		?>
 
 		<header>
-
-			<div>
+			<div class="header_container">
+				<div>
 
 						<?php
 						//logo.
@@ -27,10 +27,10 @@
 						?>
 						<a href="/"><img src="<?php echo $image_attributes[0]; ?>" /></a>
 
-			</div><!-- .header-titles-wrapper -->
+				</div>
 
 				<div>
-					<nav aria-label="<?php echo esc_attr_x( 'Horizontal', 'menu', 'default' ); ?>">
+					<nav class="nav_desktop" aria-label="<?php echo esc_attr_x( 'Horizontal', 'menu', 'default' ); ?>">
 								<ul>
 
 								<?php
@@ -45,10 +45,13 @@
 								</ul>
 
 							</nav><!-- .primary-menu-wrapper -->
+							
+							<div class="toggle"></div>
+							<?php get_template_part('templates_parts/nav_mobile'); ?>
 
 
 				</div><!-- .header-navigation-wrapper -->
-
+			</div>
 		</header><!-- #site-header -->
 
 		<?php

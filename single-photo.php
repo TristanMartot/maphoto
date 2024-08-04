@@ -70,7 +70,7 @@ $previous_post_id = get_previous_post_by_date();
             $post = get_post();
             $postId = $post->ID;
             $category = get_field('categorie', $postId);
-            // 1. On définit les arguments pour définir ce que l'on souhaite récupérer
+            // Arguments pour définir ce que l'on souhaite récupérer
             $args = array(
                 'post_type' => 'photo',
                 'categorie' => $category[0]->slug,
@@ -78,7 +78,7 @@ $previous_post_id = get_previous_post_by_date();
                 'orderby' => 'rand',
             );
             
-            // Passer les arguments à photo_block.php
+            // Passe les arguments à photo_block.php
             set_query_var('args', $args);
             get_template_part('templates_parts/photo_block'); ?>
         </div>
