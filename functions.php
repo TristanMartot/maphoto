@@ -60,7 +60,7 @@ function get_next_post_by_date() {
             return $next_post_id;
         }
     } else {
-        echo 'No next post found.';
+        echo '';
     }
 }
 
@@ -92,7 +92,7 @@ function get_previous_post_by_date() {
             return $previous_post_id;
         }
     } else {
-        echo 'No previous post found.';
+        echo '';
     }
 }
 
